@@ -39,14 +39,14 @@ const Header = ({islogedIn , setIslogedIn}) => {
                 <Link to={"/review"} className={`${pathname == '/review' ? "block font-bold text-lg transition-all duration-100 text-emerald-600 hover:text-black rounded-sm" : "block  font-bold text-lg text-slate-700"}`}>Review</Link>
               </li>
               {islogedIn && <li>
-                <Link to={"/employe"} className={`${pathname == '/employe' || pathname == '/addEmploye' ? "block font-bold text-lg transition-all duration-100 text-emerald-600 hover:text-black rounded-sm" : "block  font-bold text-lg text-slate-700" }`}>employe</Link>
+                <Link to={"/employe"} className={`${pathname == '/employe' || pathname == '/addEmploye' || pathname.includes("/editEmployee") ? "block font-bold text-lg transition-all duration-100 text-emerald-600 hover:text-black rounded-sm" : "block  font-bold text-lg text-slate-700" }`}>employe</Link>
               </li>}
               
             </ul>
           </div>
          { islogedIn ? <button type="button" className="text-white bg-rose-600 hover:bg-rose-700  focus:outline-none  font-medium rounded-lg text-sm px-4 py-2 text-center " onClick={handleClick}>Loged Out</button>
          :
-          <button type="button" className="text-black font-bold bg-amber-300 hover:bg-amber-500  focus:outline-none rounded-lg text-sm px-4 py-2 text-center " onClick={() => navigate("/login")}>LOG IN</button>
+          <button type="button" className="text-black font-bold bg-emerald-500 hover:bg-emerald-400 focus:outline-none rounded-lg text-sm px-4 py-2 text-center " onClick={() => navigate("/login")}>LOG IN</button>
 
          }
         </div>

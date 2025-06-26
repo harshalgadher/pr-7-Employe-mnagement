@@ -1,11 +1,13 @@
 import React, { Component, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const ProtectedRoute = ({ islogedIn, Component }) => {
+const ProtectedRoute = ({ Component }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!islogedIn) {
+        let status = JSON.parse(localStorage.getItem("islogedIn"))  || false;
+
+        if (!status) {
             navigate('/login')
         }
     },[])

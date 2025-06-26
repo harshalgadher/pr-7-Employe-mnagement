@@ -8,3 +8,15 @@
 .borderss{
     border-bottom: 3px solid #59b698;
 }
+.hover-fg {
+  border-bottom: 4px solid transparent;
+  border-inline: 2px solid #59b698;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.hover-fg:hover {
+  border-inline: 2px solid ;
+  border-color: #10b981; /* emerald-500 */
+  box-shadow: 0 0 10 50px rgba(16, 185, 129, 0.2);
+}
