@@ -19,8 +19,12 @@ const AddEmploye = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const tempError = {};;
 
-    if (input.name.trim() == "") toast.error("Please Enter Name...")
+
+    if (input.name.trim() == ""){
+
+    } toast.error("Please Enter Name...")
 
     if (input.department == "") toast.error("Selact Department...")
 
@@ -42,7 +46,7 @@ const AddEmploye = () => {
       salary: '',
       description: '',
     })
-    navigate('/employe')
+    // navigate('/employe')
   }
 
   return (
