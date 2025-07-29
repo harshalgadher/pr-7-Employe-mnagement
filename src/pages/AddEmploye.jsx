@@ -19,42 +19,35 @@ const AddEmploye = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input.name.trim() === '') {
-      toast.error('Please Enter Name...');
-      return;
-    }
+    const tempError = {};;
 
-    if (input.department === '') {
-      toast.error('Select Department...');
-      return;
-    }
 
-    if (input.salary.trim() === '') {
-      toast.error('Enter Salary...');
-      return;
-    }
+    if (input.name.trim() == ""){
+      
+    } toast.error("Please Enter Name...")
 
-    if (parseInt(input.salary) > 100000) {
-      toast.error("It's too much salary...!");
-      return;
-    }
+    if (input.department == "") toast.error("Selact Department...")
 
-    const employeDetail = { id: Date.now(), ...input };
-    const employees = JSON.parse(localStorage.getItem('employees')) || [];
+    if (input.salary.trim() == "") toast.error("Enter Salary...")
+
+    else if (input.salary.length > 100000) toast.error("It's too much salaryy...!")
+
+
+    const employeDetail = { id: Date.now(), ...input }
+    console.log(employeDetail);
+
+    const employees = JSON.parse(localStorage.getItem("employees")) || [];
     employees.push(employeDetail);
-    localStorage.setItem('employees', JSON.stringify(employees));
 
-    toast.success('Employee added successfully!');
-
+    localStorage.setItem("employees", JSON.stringify(employees));
     setInput({
       name: '',
       department: '',
       salary: '',
       description: '',
-    });
-
-    navigate('/employe');
-  };
+    })
+    navigate('/employe')
+  }
 
   return (
     <>
